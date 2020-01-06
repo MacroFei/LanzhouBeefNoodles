@@ -26,10 +26,16 @@ namespace LanzhouBeefNoodles
                 app.UseDeveloperExceptionPage();
             }
 
-            app.Run(async (context) =>
+            /*    app.Run(async (context) =>
+                {
+                    await context.Response.WriteAsync("Hello World!");
+                });*/
+
+            app.UseMvc(route =>
             {
-                await context.Response.WriteAsync("Hello World!");
+                route.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
             });
+
         }
     }
 }
