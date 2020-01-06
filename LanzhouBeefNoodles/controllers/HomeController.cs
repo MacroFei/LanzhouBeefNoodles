@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using LanzhouBeefNoodles.Models;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace LanzhouBeefNoodles.controllers
 {
@@ -10,26 +8,39 @@ namespace LanzhouBeefNoodles.controllers
     //[Route("[controller]/[action]")]
     public class HomeController : Controller
     {
-       /* public IActionResult Index()
-        {
-            return View();
-        }*/
+        /* public IActionResult Index()
+         {
+             return View();
+         }*/
 
-    
-           [Route("[controller]/[action]")]
-            public String Index()
-            {
-                return "Hello from Index";
-            }
 
-        public String About()
+        /* [Route("[controller]/[action]")]
+         public String Index()
+         {
+             return "Hello from Index";
+         }
+
+         public string about()
+         {
+             return "Hello from About";
+         }
+         //[Route("[action]")]
+         public String Hello1()
+         {
+             return "Hello 1";
+         }
+ */
+        private INoodleRepository _noodleRepository;
+        public HomeController(INoodleRepository noodleRepository)
         {
-            return "Hello from About";
+            //noodleRepository来自于IOC容器
+            _noodleRepository = noodleRepository;
         }
-        //[Route("[action]")]
-        public String Hello1()
+        public IActionResult Index()
         {
-            return "Hello 1";
+            var noodles = _noodleRepository.GetAllNoodles();
+            return View(noodles);
         }
+        
     }
 }
