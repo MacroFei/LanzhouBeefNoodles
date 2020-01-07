@@ -9,7 +9,7 @@ namespace LanzhouBeefNoodles.Models
     {
         IEnumerable<Feedback> GetAllFeedbacks();
 
-
+        void AddFeedback(Feedback feedback);
 
     }
 }

@@ -31,5 +31,10 @@ namespace LanzhouBeefNoodles.Models
         {
             return _feedbacks;
         }
+
+        public void AddFeedback(Feedback feedback)
+        {
+            _feedbacks.Add(feedback);
+        }
     }
 }
