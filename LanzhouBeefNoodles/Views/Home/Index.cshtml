@@ -1,4 +1,5 @@
-﻿@model IEnumerable<LanzhouBeefNoodles.Models.Noodle>
+﻿@*@model IEnumerable<LanzhouBeefNoodles.Models.Noodle>*@
+@model LanzhouBeefNoodles.ViewModels.HomeViewModel
 @**指明视图需要的数据模型*@
 @{
     ViewData["Title"] = "Index";
@@ -6,7 +7,15 @@
 
 <h1>Index</h1>
 
-@foreach (var noodle in Model)
+@*@foreach (var noodle in Model)
+    {
+        <div>
+            <h2>@noodle.Name</h2>
+            <h3>$ @noodle.Price</h3>
+            <p>@noodle.ShortDescription</p>
+        </div>
+    }*@
+@foreach (var noodle in Model.Noodles)
 {
     <div>
         <h2>@noodle.Name</h2>
@@ -14,3 +23,11 @@
         <p>@noodle.ShortDescription</p>
     </div>
 }
+<h2>评论</h2>
+@foreach (var feedback in Model.Feedbacks)
+{
+    <div>@feedback.Name</div>
+    <h3>@feedback.CreateDateUTC</h3>
+    <h2>>@feedback.Message</h2>
+}
+
