@@ -32,6 +32,10 @@ namespace LanzhouBeefNoodles.controllers
              return "Hello 1";
          }
  */
+        public String Hello1()
+        {
+            return "Hello 1";
+        }
         private INoodleRepository _noodleRepository;
         //public HomeController(INoodleRepository noodleRepository)
         //{
