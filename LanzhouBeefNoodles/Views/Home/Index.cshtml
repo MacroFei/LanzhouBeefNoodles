@@ -1,11 +1,15 @@
 ﻿@*@model IEnumerable<LanzhouBeefNoodles.Models.Noodle>*@
 @model LanzhouBeefNoodles.ViewModels.HomeViewModel
 @**指明视图需要的数据模型*@
+
+@*@{ 
+    Layout = "_layout";
+}*@
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>产品列表</h1>
 
 @*@foreach (var noodle in Model)
     {

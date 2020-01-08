@@ -6,13 +6,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\新文件夹1\**" />
+    <Content Remove="wwwroot\新文件夹1\**" />
+    <EmbeddedResource Remove="wwwroot\新文件夹1\**" />
+    <None Remove="wwwroot\新文件夹1\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.4" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\" />
+    <Folder Include="wwwroot\新文件夹\" />
   </ItemGroup>
 
 </Project>
